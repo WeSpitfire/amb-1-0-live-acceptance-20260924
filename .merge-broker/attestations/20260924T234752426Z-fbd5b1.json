@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generator": "agent-merge-broker",
+  "batchId": "20260924T234752426Z-fbd5b1",
+  "baseBranch": "main",
+  "history": "preserve",
+  "baseSha": "98c81209dacc025e2da8411e783502514fd52ed5",
+  "integratedHeadSha": "67b1ac6df309947e60fd4011342eaeae8bb1b7cd",
+  "taskIds": [
+    "SEARCH",
+    "CHECKOUT"
+  ],
+  "tasks": [
+    {
+      "id": "SEARCH",
+      "commits": [
+        "a22794f32c27e6537862274345a08bffb47b8e32"
+      ],
+      "actualPaths": [
+        "src/search/feature.txt"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "CHECKOUT",
+      "commits": [
+        "87a47ca5b876609dd8c577cb6601d2b4cadc6ef4",
+        "cf20ddc4c003d4f0eb6890f4aa3dba63e53e8d7a"
+      ],
+      "actualPaths": [
+        "src/checkout/feature.txt"
+      ],
+      "dependsOn": []
+    }
+  ],
+  "validations": [
+    {
+      "name": "workspace test",
+      "scope": "authoritative",
+      "exitCode": 0,
+      "durationMs": 808
+    }
+  ],
+  "createdAt": "2026-09-24T23:47:56.667Z",
+  "signature": {
+    "algorithm": "ed25519",
+    "keyId": "71c83bb20ed53490d0440341326951673ce30fa2c13f37545a2aa285e8f590a8",
+    "value": "vyreKxn3cCNAj1curC6gIwsAJp1DNvHFPRRM-A9bprISFmUxzTZTXpF0KKFR6nBrn7VDY2_QDfU68oRmyFQ7BQ"
+  }
+}
