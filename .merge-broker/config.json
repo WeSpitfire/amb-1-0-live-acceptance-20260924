@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "baseBranch": "main",
+  "baseRef": "origin/main",
+  "remote": "origin",
+  "stateDirectory": "merge-broker",
+  "leases": {
+    "ttlSeconds": 1800,
+    "lockTimeoutSeconds": 15,
+    "serializedPatterns": [
+      "package-lock.json",
+      "pnpm-lock.yaml",
+      "yarn.lock"
+    ]
+  },
+  "policies": {
+    "unexpectedPaths": "error",
+    "requireCleanWorktree": false,
+    "requireDependencies": true
+  },
+  "scheduling": {
+    "maxTasks": 6,
+    "maxCommits": 12,
+    "maxWaitSeconds": 600,
+    "allowPathOverlap": false
+  },
+  "integration": {
+    "branchPrefix": "merge-broker/",
+    "history": "preserve",
+    "keepFailedWorktrees": false,
+    "refreshBase": true,
+    "maxAttempts": 3,
+    "provenance": {
+      "enabled": true,
+      "directory": ".merge-broker/attestations",
+      "requireSignature": true,
+      "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAV12MNrJgXe1jcNIelylo4/5GZ04BikIcsCa4+nbk4yU=\n-----END PUBLIC KEY-----\n"
+    }
+  },
+  "validation": {
+    "authority": "broker",
+    "focused": [],
+    "authoritative": [
+      {
+        "name": "workspace test",
+        "command": "npm run test",
+        "timeoutSeconds": 900
+      }
+    ]
+  },
+  "approval": {
+    "required": true,
+    "policyRevision": "live-acceptance-v1",
+    "requiredVerifications": [],
+    "requiredChecks": [],
+    "authorizedActors": ["operator"]
+  },
+  "publish": {
+    "mode": "pull-request",
+    "draft": false,
+    "autoMerge": true,
+    "repository": "WeSpitfire/amb-1-0-live-acceptance-20260924",
+    "mergeMethod": "squash",
+    "labels": [],
+    "titleTemplate": "Integration batch {batchId}"
+  }
+}
