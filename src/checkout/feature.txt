@@ -1,1 +1,1 @@
-FIXME: replace this synthetic checkout marker.
+Synthetic checkout worker completed its feature.
